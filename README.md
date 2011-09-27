@@ -28,4 +28,4 @@
   To help emacs locate Your project correctly, You will have to create TAGS file in Your project root directory.
   Just `echo -n > TAGS` and You are good to go.
 
-  You can now navigate to the function definitions using `C-c M-.` and also use the other functionalities described in [Haskell mode for Emacs](http://www.haskell.org/haskellwiki/Haskell_mode_for_Emacs#inferior-haskell-find-definition_.28C-c_M-..29)
+  You can now navigate to the function definitions using `M-.` and also use the other functionalities described in [Emacs Wiki - EmacsTags Article](http://www.emacswiki.org/emacs/EmacsTags)
