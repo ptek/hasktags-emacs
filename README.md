@@ -17,7 +17,7 @@
 
   clone the project directory into your preferred location for emacs tools
 
-    git clone https://Kerestey@github.com/Kerestey/hasktags-emacs.git
+    git clone git://github.com/Kerestey/hasktags-emacs.git
 
   and add these two lines into your .emacs file
 
