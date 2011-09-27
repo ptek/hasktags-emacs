@@ -26,15 +26,4 @@
 
 #!/bin/bash
 
-function find_project_root_tags {
-    while ( [ "$(find . -maxdepth 1 -name TAGS)" != "./TAGS" ] ) && ( [ "$(pwd)" != "/" ] )
-    do 
-        cd ..
-    done
-}
-
-function generate_hasktags {
-    [ "$(pwd)" != "/" ] && (find . -type f -name \*\.*hs | xargs hasktags -e)
-}
-
-find_project_root_tags && generate_hasktags
+while ( [ "$(find . -maxdepth 1 -name TAGS)" != "./TAGS" ] ) && ( [ "$(pwd)" != "/" ] ); do cd ..; done && [ "$(pwd)" != "/" ] && (find . -type f -name \*\.*hs | xargs hasktags -e)
