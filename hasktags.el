@@ -31,4 +31,5 @@
   (start-process "*generate-hasktags*" "*generate-hasktags*" "generate-hasktags.sh"))
 
 (add-hook 'after-save-hook 'hasktags)
+(setq tags-revert-without-query 1)
 (provide 'hasktags)
