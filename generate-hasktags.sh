@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Copyright 2011 Pavlo Kerestey. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without modification, are
@@ -24,10 +26,12 @@
 # authors and should not be interpreted as representing official policies, either expressed
 # or implied, of Pavlo Kerestey.
 
-#!/bin/bash
+
 
 findProjectRoot() {
-  while ( [ "$(find . -maxdepth 1 -name TAGS)" != "./TAGS" ] ) && ( [ "$(pwd)" != "/" ] ); do cd ..; done
+  while ( [ "$(find . -maxdepth 1 -name TAGS)" != "./TAGS" ] ) && ( [ "$(pwd)" != "/" ] ); do
+    cd ..;
+  done 
 }
 
 exitIfPwdIsRoot() {
@@ -40,5 +44,4 @@ generateTags() {
 
 findProjectRoot
 exitIfPwdIsRoot
-generateTagss
-
+generateTags
