@@ -26,8 +26,6 @@
 # authors and should not be interpreted as representing official policies, either expressed
 # or implied, of Pavlo Kerestey.
 
-
-
 findProjectRoot() {
   while ( [ "$(find . -maxdepth 1 -name TAGS)" != "./TAGS" ] ) && ( [ "$(pwd)" != "/" ] ); do
     cd ..;
@@ -38,6 +36,7 @@ exitIfPwdIsRoot() {
   [ "$(pwd)" == "/" ] && exit
 }
 
+# TODO maybe it would be better to check for writability of the current working directory instead
 generateTags() {
   (find . -type f -name \*\.*hs | xargs hasktags -e)
 }
