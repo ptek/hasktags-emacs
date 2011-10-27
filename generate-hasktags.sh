@@ -26,4 +26,19 @@
 
 #!/bin/bash
 
-while ( [ "$(find . -maxdepth 1 -name TAGS)" != "./TAGS" ] ) && ( [ "$(pwd)" != "/" ] ); do cd ..; done && [ "$(pwd)" != "/" ] && (find . -type f -name \*\.*hs | xargs hasktags -e)
+findProjectRoot() {
+  while ( [ "$(find . -maxdepth 1 -name TAGS)" != "./TAGS" ] ) && ( [ "$(pwd)" != "/" ] ); do cd ..; done
+}
+
+exitIfPwdIsRoot() {
+  [ "$(pwd)" == "/" ] && exit
+}
+
+generateTags() {
+  (find . -type f -name \*\.*hs | xargs hasktags -e)
+}
+
+findProjectRoot
+exitIfPwdIsRoot
+generateTagss
+
