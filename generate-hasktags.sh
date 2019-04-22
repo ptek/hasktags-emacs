@@ -29,16 +29,17 @@
 findProjectRoot() {
   while ( [ "$(find . -maxdepth 1 -name TAGS)" != "./TAGS" ] ) && ( [ "$(pwd)" != "/" ] ); do
     cd ..;
-  done 
+  done
 }
 
 exitIfPwdIsRoot() {
-  [ "$(pwd)" == "/" ] && exit
+  [ "$(pwd)" == "/" ] && ( echo "could not find TAGS file!" ; exit 1 )
 }
 
 # TODO maybe it would be better to check for writability of the current working directory instead
 generateTags() {
-  (find . -type f -name \*\.*hs | xargs hasktags -e)
+  hasktags -b .
+  # (find . -type f -name \*\.*hs | xargs hasktags -e)
 }
 
 findProjectRoot
