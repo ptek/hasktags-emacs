@@ -1,6 +1,6 @@
 # hasktags emacs
 
-  This library tries to intergrate hasktags into emacs in a more automated way making it easier to navigate through your code in emacs.
+  This library intergrates hasktags into emacs, making it easier to navigate through your code in emacs.
 
 # usage
 
@@ -17,7 +17,7 @@
 
   clone the project directory into your preferred location for emacs tools
 
-    git clone git://github.com/Kerestey/hasktags-emacs.git
+    git clone https://github.com/ptek/hasktags-emacs.git
 
   and add these two lines into your .emacs file
 
